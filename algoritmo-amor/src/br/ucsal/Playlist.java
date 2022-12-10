@@ -393,5 +393,3 @@ public class Playlist {
 		} while (temp[musica][1].equals(faixaEtaria) == false);
 	}
 }
-
-

@@ -7,25 +7,28 @@ public class Escolha {
 
 	public static void main(String[] args) {
 
+		Scanner sc = new Scanner(System.in);
+	
 		int metodo; String trecho; String[][] estiloArr;
 
-		metodo = escolhaInicial();
+		metodo = escolhaInicial(sc);
 
 		if (metodo == 0) {
-			faixaEtaria();
+			faixaEtaria(sc);
 		} else {
-			estiloArr = escolhaEstilo();
-			trecho = escolhaTrecho();
+			estiloArr = escolhaEstilo(sc);
+			trecho = escolhaTrecho(sc);
 			Playlist.pesquisa(trecho, estiloArr);
 		}
+
+		sc.close();
 	}
 
 	/*Opção de Entrada*/
 
-	public static int escolhaInicial () { 
+	public static int escolhaInicial (Scanner sc) { 
 
 		int metodo;
-		Scanner sc = new Scanner(System.in);
 		Imprimir.str("\n"
 				+ "ALGORITMO DO AMOR");
 
@@ -42,18 +45,15 @@ public class Escolha {
 
 		} while (metodo < 0 || metodo > 1);
 		
-		sc.close();
 		return metodo;
 	}
 
 	/*Faixa etária + geração das músicas aleatoriamente*/
 
-	public static void faixaEtaria () { 
+	public static void faixaEtaria (Scanner sc) { 
 
 		int faixaEtaria, estilo1, estilo2, estilo3;
 		String [][] temp1, temp2, temp3;
-
-		Scanner sc = new Scanner(System.in);
 
 		do {
 			Imprimir.str("\nQual a idade do seu amor?"
@@ -88,20 +88,16 @@ public class Escolha {
 
 		Playlist.musica(temp1, faixaEtariaStr);
 		Playlist.musica(temp2, faixaEtariaStr);
-		Playlist.musica(temp3, faixaEtariaStr);
-
-		sc.close();
+		Playlist.musica(temp3, faixaEtariaStr); 
 
 	}
 
 	/*Estilo musical/categoria*/
 
-	public static String[][] escolhaEstilo () { 
+	public static String[][] escolhaEstilo (Scanner sc) { 
 
 		int estiloEscolhido;
 		String[][] temp;
-
-		Scanner sc = new Scanner(System.in);
 
 		do {
 			Imprimir.str("\nQual o estilo musical favorito da pessoa amada?"
@@ -122,18 +118,15 @@ public class Escolha {
 
 		temp = Playlist.estiloMusical(estiloEscolhido);
 
-		sc.close();
 		return temp;
 	}
 
 	/*String com o trecho escolhido*/
 
-	public static String escolhaTrecho () { 
+	public static String escolhaTrecho (Scanner sc) { 
 
 		Imprimir.str("\nQual o trecho da música que você deseja pesquisar?");
-		Scanner sc = new Scanner(System.in);
 		String escolhaTrecho = sc.nextLine();
-		sc.close();
 		return escolhaTrecho;
 	}
 
