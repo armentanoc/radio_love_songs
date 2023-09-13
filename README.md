@@ -22,4 +22,7 @@ git clone https://github.com/armentanoc/radio_love_songs
 - Select random songs by specifying an age range.
 - Search for songs using lyrics.
 - Enjoy your music discovery journey!
+  
+-------
 
+<img src="https://github.com/armentanoc/radio_love_songs/assets/88147887/af4553ea-4e43-4725-9971-0ed383ed2eb7" width="500">
