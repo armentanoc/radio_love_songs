@@ -323,34 +323,34 @@ public class Playlist {
 		return pagode;
 	}
 
-	public static void pesquisa(String trecho, String[][] estiloMusical) {
+	public static void search(String lyrics, String[][] styleArr) {
 
-		String respostaInvalida = "Poxa! Infelizmente não temos nenhuma música com esse trecho";
-		int i; boolean resultado = false;
+		String invalidAnswer = "Poxa! Infelizmente não temos nenhuma música com esse trecho";
+		int i; boolean result = false;
 
-		for (i = 0; i < estiloMusical.length - 1; i++) {
-			for (int j = 0; j < estiloMusical[i].length; j++) {
+		for (i = 0; i < styleArr.length - 1; i++) {
+			for (int j = 0; j < styleArr[i].length; j++) {
 
-				if (estiloMusical[i][0].toLowerCase().contains(trecho.toLowerCase())) {
-					Imprimir.str(estiloMusical[i][0]);
-					resultado = true;
+				if (styleArr[i][0].toLowerCase().contains(lyrics.toLowerCase())) {
+					Print.str(styleArr[i][0]);
+					result = true;
 					break;
 				}
 			}
 		} 
 
-		if(resultado == false) {
-			Imprimir.str(respostaInvalida);
+		if(result == false) {
+			Print.str(invalidAnswer);
 		}
 	}
 
 
 
-	public static String[][] estiloMusical(int estilo) {
+	public static String[][] switchCaseStyle(int style) {
 
 		String[][] temp = new String[7][2];
 
-		switch (estilo) { 
+		switch (style) { 
 
 		case 0:
 			temp = sertanejo();
@@ -372,13 +372,13 @@ public class Playlist {
 			break;
 
 		default:
-			Imprimir.str("Erro inesperado.");
+			Print.str("Erro inesperado.");
 		}
 
 		return temp;
 	}
 
-	public static void musica (String [][] arr, String faixaEtaria) {
+	public static void musica (String [][] arr, String ageRange) {
 
 		int musica;
 		String[][] temp = arr;
@@ -386,10 +386,10 @@ public class Playlist {
 
 		do {
 			musica = rd.nextInt(6);
-			if (temp[musica][1].equals(faixaEtaria) == true) {
-				Imprimir.str(temp[musica][0] + "\nFaixa Etária: " + faixaEtaria);
+			if (temp[musica][1].equals(ageRange) == true) {
+				Print.str(temp[musica][0] + "\nFaixa Etária: " + ageRange);
 			} 
 
-		} while (temp[musica][1].equals(faixaEtaria) == false);
+		} while (temp[musica][1].equals(ageRange) == false);
 	}
 }

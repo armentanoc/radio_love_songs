@@ -1,17 +1,17 @@
 
 package br.ucsal;
 
-public class Imprimir {
+public class Print {
 
 	public static void str (String str) {
 		System.out.println(str);
 	}
 
-	public static void inteiro (int inteiro) {
+	public static void numberInt (int inteiro) {
 		System.out.println(inteiro);
 	}
 
-	public static void arr (String[][] arr) {
+	public static void strArr (String[][] arr) {
 
 		for (int i = 0;  i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
